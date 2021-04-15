@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-2.1.4.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+        <div style="width:215px" th:each="skuLsInfo:${skuLsInfoList}">
+            <p class="da">
+
+                <a href="#" th:onclick="item([[${skuLsInfo.getId()}]])">
+                    <img th:src="${skuLsInfo.getPic()}" class="dim">
+                </a>
+            </p>
+
+            <p class="tab_R">
+                <span th:text="'￥'+${#numbers.formatDecimal(skuLsInfo.getPrice(),1,2)}"></span>
+            </p>
+
+            <a href="#" title="" th:onclick="item([[${skuLsInfo.getId()}]])" class="tab_JE"
+               th:utext="${skuLsInfo.getName()}">
+
+            </a>
+        </div>
+
+<script>
+
+    function item(skuid) {
+        window.location.href = "http://localhost:9003/" + skuid + ".html";
+    }
+</script>
+
+
+</body>
+</html>
