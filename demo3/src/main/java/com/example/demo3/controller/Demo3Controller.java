@@ -28,7 +28,7 @@ public class Demo3Controller {
     public Object list(@RequestParam("search") String search, ModelMap modelMap, HttpServletRequest request){
 
         Enumeration<String> reqHeadInfos=request.getHeaderNames();
-        System.out.println("获取到客户端所有的请求头信息如下");
+        System.out.println("获 取到客户端所有的请求头信息如下");
 
 
         while(reqHeadInfos.hasMoreElements()) {
